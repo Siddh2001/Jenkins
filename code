@@ -51,20 +51,12 @@ pipeline {
         }
     }
     
-    post {
-        success {
-            // Send success email notification with logs
-            emailext subject: 'Pipeline Successful',
-                     body: 'The pipeline has completed successfully.',
-                     attachLog: true,
-                     to: 'siddharthraj78679@gmail.com'
+
+        post{
+            always{
+                    mail to: "azadehghneiat@gmail.com",
+                    subject: "Build Status Email",
+                    body: "Build log attached!"
         }
-        failure {
-            // Send failure email notification with logs
-            emailext subject: 'Pipeline Failed',
-                     body: 'The pipeline has failed. Please investigate.',
-                     attachLog: true,
-                     to: 'siddharthraj78679@gmail.com'
         }
-    }
 }
