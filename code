@@ -15,7 +15,12 @@ pipeline {
                 echo 'Testing ...'
             }
         }
-        
+        stage('Code Analysis') {
+            steps {
+                // Use a code analysis tool (e.g., SonarQube)
+                echo 'Analysing ...'
+            }
+        }
         
         
         stage('Security Scan') {
