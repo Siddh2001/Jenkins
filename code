@@ -16,12 +16,7 @@ pipeline {
             }
         }
         
-        stage('Code Analysis') {
-            steps {
-                // Use a code analysis tool (e.g., SonarQube)
-                echo 'Analysing ...'
-            }
-        }
+        
         
         stage('Security Scan') {
             steps {
@@ -43,7 +38,12 @@ pipeline {
                 echo 'Integrating ...'
             }
         }
-
+        stage('Deploy to Production') {
+            steps {
+                // Use deployment tool (e.g., Jenkins Deploy to AWS plugin)
+                echo 'Deploying ...'
+            }
+        }
     }
     
 
