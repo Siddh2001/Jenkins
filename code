@@ -37,12 +37,7 @@ pipeline {
             }
         }
         
-        stage('Integration Tests on Staging') {
-            steps {
-                // Use integration testing tools (e.g., Selenium, JUnit)
-                echo 'Integrating ...'
-            }
-        }
+       
         stage('Deploy to Production') {
             steps {
                 // Use deployment tool (e.g., Jenkins Deploy to AWS plugin)
